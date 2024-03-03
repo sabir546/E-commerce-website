@@ -1,19 +1,18 @@
 import React from 'react'
 import Navigation from './customer/component/Navigation/Navigation'
 import HomePage from './customer/pages/HomePage/HomePage'
-import HomeSectionCard from './customer/component/HomeSectionCard/HomeSectionCard'
+import Footer from './customer/component/Footer/Footer'
+import Product from './customer/component/product/Product'
 const App = () => {
   return (
 
-    <div className=' ' >
-      hello
+    <div className=''>
       <Navigation/>
       <div>
-        <HomePage/>
+        {/* <HomePage/> */}
+        <Product/>
       </div>
-      <div>
-        <HomeSectionCard/>
-      </div>
+      <Footer/>
     </div>
   )
 }

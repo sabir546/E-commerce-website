@@ -134,7 +134,7 @@ export default function Navigation() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white z-50">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -262,7 +262,7 @@ export default function Navigation() {
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="#" className="-m-2 flex items-center p-2">
                     <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
+                      src="https://img.freepik.com/premium-vector/modern-indian-flag-theme-decorative-background_1055-6056.jpg?size=338&ext=jpg"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
@@ -276,7 +276,7 @@ export default function Navigation() {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
+      <header className="relative bg-white z-10">
         <p className="flex h-10 items-center justify-center bg-indigo-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p>
@@ -300,7 +300,7 @@ export default function Navigation() {
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="https://www.pngplay.com/wp-content/uploads/7/Online-Shopping-Logo-PNG-Clipart-Background.png"
                     alt=""
                   />
                 </a>
