@@ -4,8 +4,8 @@ const HomeSectionCard = ({product}) => {
   return (
     <div className='border border-black cursor-pointer flex flex-col items-center justify-center ml-8  bg-gray-100 rounded-xl overflow:hidden; w-[15rem] h-5rem '> 
 
-    <div className=' h-[13rem] w-[10rem] '>
-        <img className='rounded-lg object-cover mt-3 h-full w-full'
+    <div className=' h-[13rem] w-[12.5rem] '>
+        <img className='rounded-lg  mt-3 h-full w-full'
          src={product.imageUrl}alt="" />
     </div>
     <div className='p-4 '>

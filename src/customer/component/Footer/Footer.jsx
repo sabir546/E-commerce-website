@@ -98,9 +98,9 @@ Icons made by{' '}
 
 Freepik
 
-</Link>{''}
+</Link>{' '}
 
-from{''}
+from{'  '}
 
 <Link href="https://www.flaticon.com/" color="inherit" underline="always">
 
