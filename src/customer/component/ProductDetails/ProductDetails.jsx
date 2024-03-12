@@ -1,24 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 // import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 // import CloudUploadIcon from "@mui/icons-material/CloudUpload";
@@ -28,6 +7,9 @@ import { RadioGroup } from "@headlessui/react";
 import Rating from "@mui/material/Rating";
 import ProductReviewCard from "./ProductReviewCard";
 import { Grid, LinearProgress, Box } from "@mui/material";
+import { mens_kurta } from "../../Data/MensKurta";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+
 // import Box from '@mui/material/Box';
 
 const product = {
@@ -323,7 +305,7 @@ export default function ProductDetails() {
                 </div>
               </Grid>
               <Grid item sx={5}>
-                <h1 className="text-xl font-semibold pb-1 ">
+                <h1 className="text-xl font-semibold pb-2 ">
                   {" "}
                   Product Rating{" "}
                 </h1>
@@ -331,7 +313,7 @@ export default function ProductDetails() {
                   <Rating value={4.6} precision={0.5} readOnly />
                   <p className="opacity-60">59832 Ratings</p>
                 </div>
-                <Box className="mt-5">
+                <Box className="mt-5 space-y-3">
                   <Grid
                     container
                     justifyContent="center"
@@ -345,8 +327,62 @@ export default function ProductDetails() {
                       <LinearProgress
                         sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
+                        value={60}
+                        color="success"
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    gap={2}
+                  >
+                    <Grid item xs={4}>
+                      <p> Very Good</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
+                        variant="determinate"
                         value={40}
                         color="success"
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    gap={2}
+                  >
+                    <Grid item xs={4}>
+                      <p> Good</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
+                        variant="determinate"
+                        value={30}
+                        bgcolor={""}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    gap={2}
+                  >
+                    <Grid item xs={4}>
+                      <p> Average</p>
+                    </Grid>
+                    <Grid item xs={7}>
+                      <LinearProgress
+                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
+                        variant="determinate"
+                        value={20}
+                        color="warning"
                       />
                     </Grid>
                   </Grid>
@@ -358,73 +394,31 @@ export default function ProductDetails() {
                     gap={2}
                   >
                     <Grid item xs={4}>
-                      <p> Excellence</p>
+                      <p> Poor</p>
                     </Grid>
                     <Grid item xs={7}>
                       <LinearProgress
                         sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
                         variant="determinate"
-                        value={40}
-                        color="success"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    alignItems="center"
-                    gap={2}
-                  >
-                    <Grid item xs={4}>
-                      <p> Excellence</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={40}
-                        color="success"
-                      />
-                    </Grid>
-                  </Grid>
-                  <Grid
-                    container
-                    justifyContent="center"
-                    alignItems="center"
-                    gap={2}
-                  >
-                    <Grid item xs={4}>
-                      <p> Excellence</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={40}
-                        color="success"
-                      />
-                    </Grid>
-                  </Grid><Grid
-                    container
-                    justifyContent="center"
-                    alignItems="center"
-                    gap={2}
-                  >
-                    <Grid item xs={4}>
-                      <p> Excellence</p>
-                    </Grid>
-                    <Grid item xs={7}>
-                      <LinearProgress
-                        sx={{ bgcolor: "#-d0d0d0", borderRadius: 4, height: 7 }}
-                        variant="determinate"
-                        value={40}
-                        color="success"
+                        value={10}
+                        color="error"
                       />
                     </Grid>
                   </Grid>
                 </Box>
               </Grid>
             </Grid>
+          </div>
+        </section>
+
+        {/* Similar products */}
+
+        <section className="pt-10">
+          <h1 className="py-5 text-xl font-bold">Similar Product</h1>
+          <div className="flex flex-wrap space-y-5">
+            {mens_kurta.map((item) => (
+              <HomeSectionCard product={item} />
+            ))}
           </div>
         </section>
       </div>
